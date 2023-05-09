@@ -22,18 +22,3 @@ def preenche_frota( dicfrota, nomenavio, linha, coluna, orientacao, tamanho ):
     else:
         dicfrota[nomenavio] += [define_posicoes(linha,coluna,orientacao,tamanho)]
     return dicfrota
-    
-
-frota = {
-  "navio-tanque":[
-    [[6,1],[6,2],[6,3]]
-  ]
-}
-nome_navio = 'navio-tanque'
-linha = 4
-coluna = 7
-orientacao = 'vertical'
-tamanho = 3
-
-resultado = preenche_frota(frota, nome_navio, linha, coluna, orientacao, tamanho)
-print(resultado)
