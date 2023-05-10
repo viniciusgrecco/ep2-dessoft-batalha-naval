@@ -1,23 +1,17 @@
-def posiciona_frota(dic):
-  tabuleiro = [
-      [0,0,0,0,0,0,0,0,0,0],
-      [0,0,0,0,0,0,0,0,0,0],
-      [0,0,0,0,0,0,0,0,0,0],
-      [0,0,0,0,0,0,0,0,0,0],
-      [0,0,0,0,0,0,0,0,0,0],
-      [0,0,0,0,0,0,0,0,0,0],
-      [0,0,0,0,0,0,0,0,0,0],
-      [0,0,0,0,0,0,0,0,0,0],
-      [0,0,0,0,0,0,0,0,0,0],
-      [0,0,0,0,0,0,0,0,0,0],
-  ]
-  for navio in dic:
-    lista_navios = dic[navio]
-    for navio in lista_navios:
-      for posicao in navio:
-        x = posicao[0]
-        y = posicao[1]
-        # Substituir no tabuleiro 
-        tabuleiro[x][y] = 1
-
-  return tabuleiro
+def define_posicoes(linha, coluna, orientacao, tamanho):
+    posicao = [[linha,coluna]]
+    if orientacao == 'vertical':
+        i = 0
+        while i < tamanho-1:
+            linha += 1
+            i += 1
+            posicao2 = [linha,coluna]
+            posicao.append(posicao2)
+    if orientacao == 'horizontal':
+        i = 0
+        while i < tamanho-1:
+            coluna += 1
+            i += 1
+            posicao3= [linha,coluna]
+            posicao.append(posicao3)
+    return posicao
